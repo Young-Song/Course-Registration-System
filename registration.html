@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/acctstyle.css" type="text/css">
+		<title>Register</title>
+		<script>
+		function setEmpty(id){
+			if(document.getElementById(id).value == id)
+				document.getElementById(id).value= "";
+			if(id=="Password")
+				document.getElementById(id).type = "password";
+		}
+		function setBack(id){
+			if(document.getElementById(id).value=="" && id=="Password")
+				document.getElementById(id).type = "text";
+			if(document.getElementById(id).value=="")
+				document.getElementById(id).value=id;
+		}
+		</script>
+	</head>
+	<body>
+		<h1 style="text-align:center; margin-top:20px;">Registration</h1>
+		<form action="register.php" method="post" class="message" style="width:380px;margin:0 auto;display:block;">
+			<input id="NetID" type="text" value="NetID" name="username" onFocus="this.select();setEmpty(this.id);" onMouseOut="javascript:return false;" onBlur="setBack(this.id);"/>
+			<input id="Password" type="text" value="Password" name="password" onFocus="this.select();setEmpty(this.id);" onMouseOut="javascript:return false;" onBlur="setBack(this.id);"/>
+			<input id="Name" type="text" value="Name" name="Name" onFocus="this.select();setEmpty(this.id);" onMouseOut="javascript:return false;" onBlur="setBack(this.id);"/>
+			<select name="MajorID">
+				<option value="1">Computer Science</option>
+				<option value="2">Industrial Engineering</option>
+				<option value="3">Math/Computer Science</option>
+			</select>
+			<select name="Year">
+				<option value="freshman">Freshman</option>
+				<option value="sophomore">Sophomore</option>
+				<option value="junior">Junior</option>
+				<option value="senior">Senior</option>
+				<option value="graduate">Graduate</option>
+			</select>
+			<select name="Gender">
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+			<input type="submit" value="Send"/>
+		</form>
+		
+		<!--
+		<form action="register.php" method="post">
+			<table border="0px">
+				<tr>
+					<td>NetID:</td> <td><input class="input" type ="text" name="username" ></td>
+				</tr>
+				<tr>
+					<td>Password:</td> <td><input class="input" type ="password" name="password" ></td>
+				</tr>
+				<tr>
+					<td>Name:</td> <td><input class="input" type ="text" name ="Name"></td>
+				</tr>
+				<tr>
+					<td>Major:</td> 
+					<td><select class="input" name="MajorID">
+					<option value="1">Computer Science</option>
+					<option value="2">Industrial Engineering</option>
+					<option value="3">Math/Computer Science</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Year:</td> 
+					<td><select class="input" name="Year">
+					<option value="freshman">Freshman</option>
+					<option value="sophomore">Sophomore</option>
+					<option value="junior">Junior</option>
+					<option value="senior">Senior</option>
+					<option value="graduate">Graduate</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Gender:</td>
+					<td>
+					<input class="input" type = "radio" name="Gender" value = "female">Female
+					<input type = "radio" name="Gender" value = "male">Male
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit">
+		</form>
+		-->
+		
+	</body>
+</html>
+<!--
+<form action="index.html" method="post" class="message">
+				<input type="text" value="Name" onFocus="this.select();" onMouseOut="javascript:return false;"/>
+				<input type="text" value="Email" onFocus="this.select();" onMouseOut="javascript:return false;"/>
+				<input type="text" value="Subject" onFocus="this.select();" onMouseOut="javascript:return false;"/>
+				<textarea></textarea>
+				<input type="submit" value="Send"/>
+			</form>
+-->
